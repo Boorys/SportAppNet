@@ -30,6 +30,7 @@ namespace SportAppNet.Entity
         [Required]
         [StringLength(64)]
         public string Password { get; set; }
+        public bool? IsActive { get; set; }
 
         [InverseProperty("User")]
         public virtual ICollection<OpinionEntity> OpinionEntity { get; set; }

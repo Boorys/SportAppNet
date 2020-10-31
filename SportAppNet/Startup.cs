@@ -53,7 +53,7 @@ namespace SportAppNet
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IUserRepository, UserRepository>();
-
+            services.AddTransient<IEmailService, EmailService>();
 
             //JWT
             services.AddAuthentication(x =>

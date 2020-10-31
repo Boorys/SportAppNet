@@ -9,13 +9,13 @@ Skill int null
 alter table OpinionEntity add UserId int not null
 
 create table UserEntity(
-Id INT NOT NULL PRIMARY KEY,
+Id INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
 Email varchar(100) not null,
 FirstName varchar(50) not null,
 LastName varchar(50) not null,
 role varchar(50) not null,
 )
-alter table [dbo].[UserEntity] alter column Password varchar(64) not null
+alter table [dbo].[UserEntity] add Password varchar(64) not null
 
 
 alter table OpinionEntity
@@ -48,3 +48,5 @@ MainTypSportId int
 
 alter table DisciplineEntity
 add constraint DisciplineEntity_MainTypSportEntity_FK FOREIGN KEY ( MainTypSportId ) references MainTypSportEntity(Id)
+
+alter table [dbo].[UserEntity] add IsActive bit null

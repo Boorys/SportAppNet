@@ -26,7 +26,7 @@ namespace SportAppNet.Entity
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=.\\;Database=Sport_app_net;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=.\\;Database=sport_app_net;Trusted_Connection=True;");
             }
         }
 
@@ -66,8 +66,6 @@ namespace SportAppNet.Entity
 
             modelBuilder.Entity<UserEntity>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.Property(e => e.Email).IsUnicode(false);
 
                 entity.Property(e => e.FirstName).IsUnicode(false);
