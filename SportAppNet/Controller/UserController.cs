@@ -50,8 +50,9 @@ namespace SportAppNet.Controllers
                 JwtSecurityToken tokenJwt = _emailService.DecodeJwtToken(token);
                 string email = tokenJwt.Payload.FirstOrDefault(x => x.Key == "email").Value.ToString();
                 _userService.ActivateUser(email);
+                return Ok();
             }
-            return null;
+            return BadRequest();
         }
 
         [HttpPost("add")]
@@ -71,6 +72,6 @@ namespace SportAppNet.Controllers
         {
             return Ok();
         }
-
+  
     }
 }

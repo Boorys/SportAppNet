@@ -54,7 +54,8 @@ namespace SportAppNet
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IUserRepository, UserRepository>();
             services.AddTransient<IEmailService, EmailService>();
-
+            services.AddTransient<ISportTypeRepository<MainTypSportEntity>, SportTypeRepository<MainTypSportEntity>>();
+            services.AddTransient<IDisciplineRepository<DisciplineEntity>, DisciplineRepository<DisciplineEntity>>();
             //JWT
             services.AddAuthentication(x =>
             {
