@@ -9,7 +9,7 @@ namespace SportAppNet.Repository
     public interface IDisciplineRepository<T> where T : DisciplineEntity
     {
 
-        public IQueryable<MainTypSportEntity> GetAllDisciplineByMainTypSport(int mainTypSportId);
+        public Task<IEnumerable<T>> GetAllDisciplineByMainTypSport(int mainTypSportId);
 
 
     }

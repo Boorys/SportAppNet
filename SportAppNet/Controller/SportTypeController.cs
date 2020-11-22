@@ -6,34 +6,36 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SportAppNet.Entity;
 using SportAppNet.Repository;
+using SportAppNet.Service.IService;
 
 namespace SportAppNet.Controller
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class SportTypeController : ControllerBase
     {
 
-        private readonly ISportTypeRepository<MainTypSportEntity> _sportRepository;
-        private readonly IDisciplineRepository<DisciplineEntity> _disciplineRepository;
+        private readonly ISportTypeService _sportTypeService;
+        private readonly IDisciplineService _disciplineService;
 
-        public SportTypeController(ISportTypeRepository<MainTypSportEntity> sportRepository,IDisciplineRepository<DisciplineEntity> disciplineRepository)
-        {
-            _sportRepository = sportRepository;
-            _disciplineRepository = disciplineRepository;
+        public SportTypeController(ISportTypeService sportTypeService, IDisciplineService disciplineService)
+        {         
+            _sportTypeService = sportTypeService;
+            _disciplineService = disciplineService;
         }
 
-
-        public IActionResult GetAllMainTypSports()
+        [HttpGet]
+        [Route("mainTypSport")]
+        public IActionResult GetAllMainTypSport()
         {
-            return Ok(_sportRepository.GetAllTypSport());
+            return Ok(_sportTypeService.GetAllSportTypeService());
         }
 
         [HttpGet]
         [Route("discipline/{mainSportId}")]
         public IActionResult GetDisciplineByMainTypSport(int mainSportId)
         {
-            return Ok(_disciplineRepository.GetAllDisciplineByMainTypSport(mainSportId).ToList());
+            return Ok(_disciplineService.GetAllDisciplineByMainTypSport(mainSportId));
         }
 
     }

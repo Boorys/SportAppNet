@@ -39,3 +39,9 @@ msbuild.wrn
 
 # Visual Studio 2015
 .vs/
+.vs\
+*.dll
+*.pdb
+*.v2
+*.cache
+.suo

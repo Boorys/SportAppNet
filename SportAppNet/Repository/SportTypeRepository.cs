@@ -13,14 +13,14 @@ namespace SportAppNet.Repository
         public async Task<IEnumerable<T>> GetAllTypSport()
         {
             using (var context = new Context())
-            {
-                var mainTypSportEntityList = context.MainTypSportEntity;
-              
+            {               
                 return await context.Set<T>().ToListAsync();
             }
         }
-   
-  
 
+        public Task<IEnumerable<T>> GetDisciplineByMainTypSport()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

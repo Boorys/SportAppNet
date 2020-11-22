@@ -13,6 +13,8 @@ namespace SportAppNet.Tool
         public MappingProfile()
         {
             CreateMap<UserPostDTO, UserEntity>();
+            CreateMap<MainTypSportEntity, MainTypSportGetDto>();
+            CreateMap<DisciplineEntity, DisciplineGetDto>();
         }
     }
 }

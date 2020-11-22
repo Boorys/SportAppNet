@@ -42,7 +42,7 @@ namespace SportAppNet
             //mapper
             var mapperConfig = new MapperConfiguration(mc =>
             {
-                //mc.AddProfile(new MappingProfile());
+                mc.AddProfile(new MappingProfile());
             });
             IMapper mapper = mapperConfig.CreateMapper();   
            
@@ -51,11 +51,15 @@ namespace SportAppNet
             services.AddSingleton(mapper);       
             services.AddControllers().AddNewtonsoftJson();
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
-            services.AddTransient<IUserService, UserService>();
-            services.AddTransient<IUserRepository, UserRepository>();
-            services.AddTransient<IEmailService, EmailService>();
+            services.AddTransient<IUserService, UserService>();    
+            services.AddTransient<IEmailService, EmailService>();               
+            services.AddTransient<ISportTypeService, SportTypeService>();
+            services.AddTransient<IDisciplineService, DisciplineService>();
+
             services.AddTransient<ISportTypeRepository<MainTypSportEntity>, SportTypeRepository<MainTypSportEntity>>();
             services.AddTransient<IDisciplineRepository<DisciplineEntity>, DisciplineRepository<DisciplineEntity>>();
+            services.AddTransient<IUserRepository, UserRepository>();
+
             //JWT
             services.AddAuthentication(x =>
             {

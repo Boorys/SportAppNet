@@ -10,11 +10,12 @@ namespace SportAppNet.Repository
     public class DisciplineRepository<T> : IDisciplineRepository<T> where T : DisciplineEntity
     {
    
-        public IQueryable<MainTypSportEntity> GetAllDisciplineByMainTypSport(int mainTypSportId)
+    
+      public async Task<IEnumerable<T>> GetAllDisciplineByMainTypSport(int mainTypSportId)
         {
-            using(var context = new Context())
-            {          
-                return context.MainTypSportEntity.Include(x=>x.DisciplineEntity).Where(x=>x.Id==mainTypSportId);
+            using (var context = new Context())
+            {            
+                return await context.Set<T>().Include(x=>x.MainTypSport).Where(x=>x.MainTypSport.Id == mainTypSportId).ToListAsync();
             }
         }
     }

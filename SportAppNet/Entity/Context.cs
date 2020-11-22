@@ -34,10 +34,6 @@ namespace SportAppNet.Entity
         {
             modelBuilder.Entity<DisciplineEntity>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
-                entity.Property(e => e.AccurateName).IsUnicode(false);
-
                 entity.Property(e => e.DisciplineName).IsUnicode(false);
 
                 entity.HasOne(d => d.MainTypSport)
@@ -48,8 +44,6 @@ namespace SportAppNet.Entity
 
             modelBuilder.Entity<MainTypSportEntity>(entity =>
             {
-                entity.Property(e => e.Id).ValueGeneratedNever();
-
                 entity.Property(e => e.MainNameOfSport).IsUnicode(false);
             });
 

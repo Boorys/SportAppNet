@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace SportAppNet.Service.IService
 {
-   public interface ISportTypeService
-   {
-        public List<MainTypSportGetDto> GetAllSportTypeService();   
-   }
+   public interface IDisciplineService
+    {
+       IEnumerable<DisciplineGetDto> GetAllDisciplineByMainTypSport(int mainTypSportId);
+    }
 }
