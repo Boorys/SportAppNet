@@ -19,13 +19,13 @@ namespace SportAppNet
 {
     public class Startup
     {
-    
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-          
-         }
-       
+
+        }
+
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -44,21 +44,24 @@ namespace SportAppNet
             {
                 mc.AddProfile(new MappingProfile());
             });
-            IMapper mapper = mapperConfig.CreateMapper();   
-           
+            IMapper mapper = mapperConfig.CreateMapper();
+
 
             //DI
-            services.AddSingleton(mapper);       
+            services.AddSingleton(mapper);
             services.AddControllers().AddNewtonsoftJson();
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
-            services.AddTransient<IUserService, UserService>();    
-            services.AddTransient<IEmailService, EmailService>();               
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<ISportTypeService, SportTypeService>();
             services.AddTransient<IDisciplineService, DisciplineService>();
 
             services.AddTransient<ISportTypeRepository<MainTypSportEntity>, SportTypeRepository<MainTypSportEntity>>();
             services.AddTransient<IDisciplineRepository<DisciplineEntity>, DisciplineRepository<DisciplineEntity>>();
             services.AddTransient<IUserRepository, UserRepository>();
+
+            services.AddControllers(options =>
+            options.Filters.Add(new HttpResponseExceptionFilter()));
 
             //JWT
             services.AddAuthentication(x =>
@@ -80,9 +83,10 @@ namespace SportAppNet
            });
 
         }
-  
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseExceptionHandler("/error");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -97,7 +101,11 @@ namespace SportAppNet
             app.UseAuthentication();
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints => {
+            // Add this
+
+
+            app.UseEndpoints(endpoints =>
+            {
                 endpoints.MapControllers();
             });
         }
