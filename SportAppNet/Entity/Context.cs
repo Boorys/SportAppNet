@@ -69,6 +69,8 @@ namespace SportAppNet.Entity
                 entity.Property(e => e.Password).IsUnicode(false);
 
                 entity.Property(e => e.Role).IsUnicode(false);
+
+                entity.Property(e => e.UserId).IsUnicode(false);
             });
 
             modelBuilder.Entity<UserMainTypSport>(entity =>

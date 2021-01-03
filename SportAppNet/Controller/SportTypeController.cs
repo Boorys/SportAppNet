@@ -34,7 +34,7 @@ namespace SportAppNet.Controller
         [HttpGet]
         [Route("discipline/{mainSportId}")]
         public IActionResult GetDisciplineByMainTypSport(int mainSportId)
-        {
+        {           
             return Ok(_disciplineService.GetAllDisciplineByMainTypSport(mainSportId));
         }
 

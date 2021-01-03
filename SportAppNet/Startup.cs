@@ -55,10 +55,15 @@ namespace SportAppNet
             services.AddTransient<IEmailService, EmailService>();
             services.AddTransient<ISportTypeService, SportTypeService>();
             services.AddTransient<IDisciplineService, DisciplineService>();
+            services.AddTransient<INoticeService, NoticeService>();
+            services.AddTransient<IOpinionService, OpinionService>();
+
 
             services.AddTransient<ISportTypeRepository<MainTypSportEntity>, SportTypeRepository<MainTypSportEntity>>();
             services.AddTransient<IDisciplineRepository<DisciplineEntity>, DisciplineRepository<DisciplineEntity>>();
+            services.AddTransient<IOpinionRepository<OpinionEntity>, OpinionRepository<OpinionEntity>>();
             services.AddTransient<IUserRepository, UserRepository>();
+        //    services.AddTransient<INoticeRepository, NoticeRepository>();
 
             services.AddControllers(options =>
             options.Filters.Add(new HttpResponseExceptionFilter()));

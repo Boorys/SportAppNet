@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SportAppNet.DTO;
+using SportAppNet.Service.IService;
 using SportAppNet.Tool;
 
 namespace SportAppNet.Controller
@@ -15,9 +17,18 @@ namespace SportAppNet.Controller
     public class NoticeController : ControllerBase
     {
 
-        [HttpPost]
-        public IActionResult AddNotice()
+        private readonly INoticeService _InoticeService;
+
+        public NoticeController(INoticeService noticeService)
         {
+            _InoticeService = noticeService;
+        }
+
+        [HttpPost]
+        public IActionResult AddNotice(NoticePostDto noticePostDto)
+        {
+            _InoticeService.AddNotice(noticePostDto);
+                   
             return Ok();
         }
 
@@ -25,8 +36,14 @@ namespace SportAppNet.Controller
         [HttpGet]
         public IActionResult Test()
         {
+          
             return Ok();
         }
 
+  
+
+
+
+    
     }
 }

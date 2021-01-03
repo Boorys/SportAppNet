@@ -22,8 +22,7 @@ namespace SportAppNet.Service.Service
 
         public IEnumerable<DisciplineGetDto> GetAllDisciplineByMainTypSport(int mainTypSportId)
         {
-          var disciplineEntityList =  _disciplineRepository.GetAllDisciplineByMainTypSport(mainTypSportId).Result;
-
+            var disciplineEntityList = _disciplineRepository.GetAllDisciplineByMainTypSport(mainTypSportId).Result;
             return _mapper.Map(disciplineEntityList, new List<DisciplineGetDto>());
         }
     }

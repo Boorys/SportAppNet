@@ -49,5 +49,12 @@ namespace SportAppNet.Repository
         {               
            return context.UserEntity.FirstOrDefault(x => x.Email == email);        
         }
+
+       public UserEntity GetUserByUserId(Guid userId, Context context)
+       {
+            return context.UserEntity.SingleOrDefault(x => x.UserId == userId.ToString());
+       }
+
+      
     }
 }

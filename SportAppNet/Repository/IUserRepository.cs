@@ -14,5 +14,7 @@ namespace SportAppNet.Repository
         public UserEntity UserByCredential(UserCredentialGetDTO userCredentialGetDTO);
         public UserEntity GetUserById(int id);
         public UserEntity GetUserByEmail(string email,Context context);
+        public UserEntity GetUserByUserId(Guid userId, Context context);
+
     }
 }

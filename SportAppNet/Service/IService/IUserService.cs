@@ -8,8 +8,9 @@ namespace SportAppNet.Service.IService
 {
     public interface IUserService
     {
-        public bool AddNewUser(UserPostDTO userPostDTO);
+        public void AddNewUser(UserPostDTO userPostDTO);
         public AuthenticateResponse Authenticate(UserCredentialGetDTO userCredentialGetDTO);
         public void ActivateUser(string email);
+        public bool CheckEmailExist(string email);
     }
 }

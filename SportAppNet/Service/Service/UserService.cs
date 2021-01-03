@@ -31,7 +31,13 @@ namespace SportAppNet.Service.Service
             _emailService = emailService;
         }
 
-        public bool AddNewUser(UserPostDTO userPostDTO)
+        public bool CheckEmailExist(string email)
+        {
+            return _userRepository.EmailExist(email);
+        }
+        
+        
+        public void AddNewUser(UserPostDTO userPostDTO)
         {
             userPostDTO.Password = PasswordTools.sha256(userPostDTO.Password);
             UserEntity userEntity = new UserEntity();
@@ -40,17 +46,11 @@ namespace SportAppNet.Service.Service
             userEntity.FirstName = userPostDTO.FirstName;
             userEntity.Password = userPostDTO.Password;
             userEntity.Role = Role.USER.ToString();
+            userEntity.UserId = Guid.NewGuid().ToString();
 
-            if (!_userRepository.EmailExist(userPostDTO.Email))
-            {
-                _userRepository.AddNewUser(userEntity);
-                _emailService.SendEmail(userPostDTO);             
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            _userRepository.AddNewUser(userEntity); 
+            _emailService.SendEmail(userPostDTO);             
+           
         }
 
         public AuthenticateResponse Authenticate(UserCredentialGetDTO userCredentialGetDTO)

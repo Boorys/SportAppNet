@@ -58,12 +58,16 @@ namespace SportAppNet.Controllers
         [HttpPost("add")]
         public IActionResult CreateUser(UserPostDTO userPostDTO)
         {
-           var isCreated = _userService.AddNewUser(userPostDTO);
-
-            if (!isCreated)
-                return StatusCode(401, "Email exist");
-
-            return Ok();
+            
+           if (_userService.CheckEmailExist(userPostDTO.Email))
+           {
+               return StatusCode(401, "Email exist");
+           }
+           else
+           {
+               _userService.AddNewUser(userPostDTO);
+               return Ok();
+            }
         }
 
         [Microsoft.AspNetCore.Authorization.Authorize(Roles = Role.USER)]

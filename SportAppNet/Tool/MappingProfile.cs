@@ -15,6 +15,8 @@ namespace SportAppNet.Tool
             CreateMap<UserPostDTO, UserEntity>();
             CreateMap<MainTypSportEntity, MainTypSportGetDto>();
             CreateMap<DisciplineEntity, DisciplineGetDto>();
+            CreateMap<OpinionPostDto, OpinionEntity>();
+            
         }
     }
 }

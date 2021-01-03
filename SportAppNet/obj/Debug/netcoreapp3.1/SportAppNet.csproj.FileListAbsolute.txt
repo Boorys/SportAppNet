@@ -1,6 +1,5 @@
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\SportAppNet.exe
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\SportAppNet.deps.json
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\SportAppNet.runtimeconfig.json
@@ -9,6 +8,7 @@ C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\Spor
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\SportAppNet.pdb
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\MailKit.dll
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\System.Web.Http.dll
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
@@ -39,8 +39,10 @@ C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\Micr
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\MimeKit.dll
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
@@ -57,16 +59,14 @@ C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\runt
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\SportAppNet.AssemblyInfoInputs.cache
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\SportAppNet.AssemblyInfo.cs
-C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\SportAppNet.RazorTargetAssemblyInfo.cache
-C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\SportAppNet.csproj.CopyComplete
+C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\SportAppNet.csproj.CoreCompileInputs.cache
+C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\SportAppNet.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\staticwebassets\SportAppNet.StaticWebAssets.Manifest.cache
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\staticwebassets\SportAppNet.StaticWebAssets.xml
+C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\scopedcss\bundle\SportAppNet.styles.css
+C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\SportAppNet.RazorTargetAssemblyInfo.cache
+C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\SportAppNet.csproj.CopyComplete
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\SportAppNet.dll
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\SportAppNet.pdb
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\SportAppNet.genruntimeconfig.cache
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\SportAppNet.csprojAssemblyReference.cache
-C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\MailKit.dll
-C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\MimeKit.dll
-C:\Users\jakub\source\repos\SportAppNet\SportAppNet\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
-C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\SportAppNet.csproj.CoreCompileInputs.cache
-C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\SportAppNet.MvcApplicationPartsAssemblyInfo.cache
