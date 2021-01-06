@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportAppNet", "SportAppNet\SportAppNet.csproj", "{CA8695CC-A985-4510-948B-FE89F27DAB9C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportAppNet", "SportAppNet\SportAppNet.csproj", "{CA8695CC-A985-4510-948B-FE89F27DAB9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportAppNetTest", "SportAppNetTest\SportAppNetTest.csproj", "{256E886A-9777-46DC-9869-3C687F33F688}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CA8695CC-A985-4510-948B-FE89F27DAB9C} = {CA8695CC-A985-4510-948B-FE89F27DAB9C}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{CA8695CC-A985-4510-948B-FE89F27DAB9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA8695CC-A985-4510-948B-FE89F27DAB9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA8695CC-A985-4510-948B-FE89F27DAB9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{256E886A-9777-46DC-9869-3C687F33F688}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{256E886A-9777-46DC-9869-3C687F33F688}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{256E886A-9777-46DC-9869-3C687F33F688}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{256E886A-9777-46DC-9869-3C687F33F688}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
