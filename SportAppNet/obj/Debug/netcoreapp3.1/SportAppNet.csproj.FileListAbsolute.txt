@@ -69,4 +69,3 @@ C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\Spor
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\SportAppNet.dll
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\SportAppNet.pdb
 C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\SportAppNet.genruntimeconfig.cache
-C:\Users\jakub\source\repos\SportAppNet\SportAppNet\obj\Debug\netcoreapp3.1\SportAppNet.csprojAssemblyReference.cache
