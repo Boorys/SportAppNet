@@ -85,3 +85,33 @@ GO
    alter table [dbo].[UserEntity] add UserId varchar(50) not null;
 
    GO
+   create  table MainTypSportLocation(
+LocationId INT NOT NULL ,
+MainTypSportId INT not null,
+)
+GO
+alter table MainTypSportLocation
+add constraint MainTypSportLocation_MainTypSport_Entity_FK FOREIGN KEY ( MainTypSportId ) references MainTypSportEntity(Id)
+GO
+
+CREATE TABLE [dbo].[LocationEntity](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[City] [varchar](max) NOT NULL,
+	[Country] [varchar](max) NOT NULL,
+	[Department] [varchar](max) NOT NULL,
+	[Lang] [decimal](10, 10) NOT NULL,
+	[Lat] [decimal](10, 10) NOT NULL,
+	[LocationId] [int] NOT NULL,
+	[Street] [varchar](max) NOT NULL,
+	[StreetNumber] [int] NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+
+
+alter table MainTypSportLocation
+add constraint MainTypSportLocation_Location_Entity_FK FOREIGN KEY ( LocationId ) references LocationEntity(Id)
+GO

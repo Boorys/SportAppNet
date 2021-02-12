@@ -16,7 +16,9 @@ namespace SportAppNet.Entity
         }
 
         public virtual DbSet<DisciplineEntity> DisciplineEntity { get; set; }
+        public virtual DbSet<LocationEntity> LocationEntity { get; set; }
         public virtual DbSet<MainTypSportEntity> MainTypSportEntity { get; set; }
+        public virtual DbSet<MainTypSportLocation> MainTypSportLocation { get; set; }
         public virtual DbSet<OpinionEntity> OpinionEntity { get; set; }
         public virtual DbSet<UserEntity> UserEntity { get; set; }
         public virtual DbSet<UserMainTypSport> UserMainTypSport { get; set; }
@@ -42,9 +44,37 @@ namespace SportAppNet.Entity
                     .HasConstraintName("DisciplineEntity_MainTypSportEntity_FK");
             });
 
+            modelBuilder.Entity<LocationEntity>(entity =>
+            {
+                entity.Property(e => e.City).IsUnicode(false);
+
+                entity.Property(e => e.Country).IsUnicode(false);
+
+                entity.Property(e => e.Department).IsUnicode(false);
+
+                entity.Property(e => e.Street).IsUnicode(false);
+            });
+
             modelBuilder.Entity<MainTypSportEntity>(entity =>
             {
                 entity.Property(e => e.MainNameOfSport).IsUnicode(false);
+            });
+
+            modelBuilder.Entity<MainTypSportLocation>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.HasOne(d => d.Location)
+                    .WithMany()
+                    .HasForeignKey(d => d.LocationId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("MainTypSportLocation_Location_Entity_FK");
+
+                entity.HasOne(d => d.MainTypSport)
+                    .WithMany()
+                    .HasForeignKey(d => d.MainTypSportId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("MainTypSportLocation_MainTypSport_Entity_FK");
             });
 
             modelBuilder.Entity<OpinionEntity>(entity =>
