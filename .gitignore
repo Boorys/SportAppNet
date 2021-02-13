@@ -448,3 +448,8 @@ $RECYCLE.BIN/
 *.txt
 *.suo
 .suo
+v16
+.dll
+.pbd
+Debug/*
+.testlog

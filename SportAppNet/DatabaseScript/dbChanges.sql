@@ -115,3 +115,10 @@ GO
 alter table MainTypSportLocation
 add constraint MainTypSportLocation_Location_Entity_FK FOREIGN KEY ( LocationId ) references LocationEntity(Id)
 GO
+
+alter table [dbo].[LocationEntity] add DisciplineId int;
+GO
+alter table LocationEntity
+add constraint DisciplineEntity_LocationEntity_FK FOREIGN KEY
+( DisciplineId ) references DisciplineEntity(Id)
+GO

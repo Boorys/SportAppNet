@@ -23,5 +23,10 @@ namespace SportAppNet.Entity
         [Required]
         public string Street { get; set; }
         public int StreetNumber { get; set; }
+        public int? DisciplineId { get; set; }
+
+        [ForeignKey(nameof(DisciplineId))]
+        [InverseProperty(nameof(DisciplineEntity.LocationEntity))]
+        public virtual DisciplineEntity Discipline { get; set; }
     }
 }

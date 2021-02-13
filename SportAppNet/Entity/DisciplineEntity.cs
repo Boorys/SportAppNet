@@ -7,6 +7,11 @@ namespace SportAppNet.Entity
 {
     public partial class DisciplineEntity
     {
+        public DisciplineEntity()
+        {
+            LocationEntity = new HashSet<LocationEntity>();
+        }
+
         [Key]
         public int Id { get; set; }
         [StringLength(100)]
@@ -16,5 +21,7 @@ namespace SportAppNet.Entity
         [ForeignKey(nameof(MainTypSportId))]
         [InverseProperty(nameof(MainTypSportEntity.DisciplineEntity))]
         public virtual MainTypSportEntity MainTypSport { get; set; }
+        [InverseProperty("Discipline")]
+        public virtual ICollection<LocationEntity> LocationEntity { get; set; }
     }
 }
